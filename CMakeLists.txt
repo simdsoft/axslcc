@@ -82,13 +82,6 @@ if (NOT (IS_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/3rdparty/glslang"))
     message(STATUS "Apply ${GLSLANG_PATCH_FILE} to ${GLSLANG_SOURCE_DIR} ...")
     execute_process(COMMAND ${GIT_COMMAND} -C "${GLSLANG_SOURCE_DIR}" apply --verbose --ignore-whitespace "${GLSLANG_PATCH_FILE}")
 endif()
-
-set(GLSLANG_SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/3rdparty/glslang")
-    set(GLSLANG_PATCH_FILE "${CMAKE_CURRENT_LIST_DIR}/glslang.patch")
-    file(TO_CMAKE_PATH "${GLSLANG_SOURCE_DIR}" GLSLANG_SOURCE_DIR)
-    file(TO_CMAKE_PATH "${GLSLANG_PATCH_FILE}" GLSLANG_PATCH_FILE)
-    message(STATUS "Apply ${GLSLANG_PATCH_FILE} to ${GLSLANG_SOURCE_DIR} ...")
-    execute_process(COMMAND ${GIT_COMMAND} -C "${GLSLANG_SOURCE_DIR}" apply --verbose --ignore-whitespace "${GLSLANG_PATCH_FILE}")
     
 add_subdirectory(3rdparty/glslang)
 add_subdirectory(3rdparty/spirv-cross)
