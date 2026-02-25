@@ -9,6 +9,10 @@ It uses [glslang](https://github.com/KhronosGroup/glslang) for parsing GLSL and 
 
 ## ChangeLog
 
+### 3.5.0
+
+- Add support for running on linux-arm64
+
 ### 3.4.0
 
 - Add support for compiling to multi shader targets with option `--cross-args`
